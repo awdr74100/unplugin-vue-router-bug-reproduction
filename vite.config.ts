@@ -3,7 +3,6 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueRouter from 'unplugin-vue-router/vite'
-import electron from 'vite-plugin-electron/simple'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -11,12 +10,7 @@ export default defineConfig({
     vueRouter({
       dts: 'src/typed-router.d.ts'
     }),
-    vue(),
-    electron({
-      main: {
-        entry: 'electron/main.ts'
-      }
-    })
+    vue()
   ],
   resolve: {
     alias: {
